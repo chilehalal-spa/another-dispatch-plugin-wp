@@ -1,13 +1,18 @@
 <?php
 /**
  * Plugin Name: Another Dispatch Plugin Re
- * Plugin URI:  https://github.com/chomusuke-png/another-dispatch-plugin-wp
+ * Plugin URI:  https://github.com/chilehalal-spa/another-dispatch-plugin-wp
  * Description: Sistema de envíos masivos y automatizados de correos electrónicos.
- * Version:     2.7.0
+ * Version:     2.8.0
  * Author:      Zumito
  * Text Domain: another-dispatch-plugin
  *
  * @package Zumito\ADP
+ * Requires at least: 5.8
+ * Requires PHP: 8.3
+ * License:     GPL-2.0-or-later
+ * License URI: https://www.gnu.org/licenses/gpl-2.0.html
+ * Update URI:  https://github.com/chilehalal-spa/another-dispatch-plugin-wp
  */
 
 declare(strict_types=1);
@@ -16,7 +21,11 @@ if (!defined('ABSPATH')) {
     exit;
 }
 
-define('ADP_VERSION', '2.7.0');
+// Actualizaciones desde las releases de GitHub
+require_once __DIR__ . '/includes/class-chilehalal-github-updater.php';
+Chilehalal_GitHub_Updater_V1::register( __FILE__, 'chilehalal-spa/another-dispatch-plugin-wp' );
+
+define('ADP_VERSION', '2.8.0');
 define('ADP_PATH', plugin_dir_path(__FILE__));
 define('ADP_URL', plugin_dir_url(__FILE__));
 
